@@ -17,6 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Auth::routes();
-    Route::get('/', [\App\Http\Controllers\IndexController::class, '__invoke']);
+Route::name('main.')->group(function() {
+    Route::get('/', \App\Http\Controllers\Main\IndexController::class);
+});
+
+Route::prefix('admin')->group(function (){
+    Route::name('main')->group(function() {
+        Route::get('/', \App\Http\Controllers\Admin\Main\IndexController::class);
+});
+});
 
 
