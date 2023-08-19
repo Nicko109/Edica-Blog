@@ -60,6 +60,8 @@
     </div>
 </header>
 
+
+
 @yield('content')
 
 <section class="edica-footer-banner-section">

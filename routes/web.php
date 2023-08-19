@@ -23,8 +23,14 @@ Route::name('main.')->group(function() {
 
 Route::prefix('admin')->group(function (){
     Route::name('main')->group(function() {
-        Route::get('/', \App\Http\Controllers\Admin\Main\IndexController::class);
+        Route::get('/', \App\Http\Controllers\Admin\Main\IndexController::class)->name('main.index');
 });
+    Route::prefix('categories')->group(function (){
+    Route::name('Category')->group(function() {
+        Route::get('/', \App\Http\Controllers\Admin\Category\IndexController::class);
+    });
+        Route::get('/create', \App\Http\Controllers\Admin\Category\CreateController::class)->name('admin.category.create');
+    });
 });
 
 
