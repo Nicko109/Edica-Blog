@@ -25,6 +25,17 @@ Route::prefix('admin')->group(function (){
     Route::name('main')->group(function() {
         Route::get('/', \App\Http\Controllers\Admin\Main\IndexController::class)->name('main.index');
 });
+    Route::prefix('post')->group(function (){
+        Route::get('/', \App\Http\Controllers\Admin\Post\IndexController::class)->name('admin.post.index');
+        Route::get('/create', \App\Http\Controllers\Admin\Post\CreateController::class)->name('admin.post.create');
+        Route::post('/', \App\Http\Controllers\Admin\Post\StoreController::class)->name('admin.post.store');
+        Route::get('/{post}', \App\Http\Controllers\Admin\Post\ShowController::class)->name('admin.post.show');
+        Route::get('/{post}/edit', \App\Http\Controllers\Admin\Post\EditController::class)->name('admin.post.edit');
+        Route::patch('/{post}', \App\Http\Controllers\Admin\Post\UpdateController::class)->name('admin.post.update');
+        Route::delete('/{post}', \App\Http\Controllers\Admin\Post\DeleteController::class)->name('admin.post.delete');
+    });
+
+
     Route::prefix('category')->group(function (){
         Route::get('/', \App\Http\Controllers\Admin\Category\IndexController::class)->name('admin.category.index');
         Route::get('/create', \App\Http\Controllers\Admin\Category\CreateController::class)->name('admin.category.create');
