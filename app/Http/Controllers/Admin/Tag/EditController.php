@@ -1,16 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Category;
+namespace App\Http\Controllers\Admin\Tag;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
-class ShowController extends Controller
+class EditController extends Controller
 {
  public function __invoke(Category $category)
  {
-
-   return view('admin.category.show', compact('category'));
+   return view('admin.category.edit', compact('category'));
  }
 }
