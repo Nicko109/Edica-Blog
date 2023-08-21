@@ -22,6 +22,17 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'name' => 'required|string',
+            'email' => 'required|string|email|unique:users',
+            'password' => 'required|string',
+            'role' => 'required|integer',
+
+        ];
+    }
+
+    public function messages()
+    {
+        return [
             'name.required' => 'Это поле необходимо для заполнения',
             'name.string' => 'Имя должно быть строкой',
             'email.required' => 'Это поле необходимо для заполнения',

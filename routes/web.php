@@ -17,9 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Auth::routes();
+Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout']);
+
 Route::name('main.')->group(function() {
     Route::get('/', \App\Http\Controllers\Main\IndexController::class);
 });
+
+Route::group(['middleware' => ['auth', 'admin']], function (){
 
 Route::prefix('admin')->group(function (){
     Route::name('main')->group(function() {
@@ -66,5 +70,5 @@ Route::prefix('admin')->group(function (){
         Route::delete('/{user}', \App\Http\Controllers\Admin\User\DeleteController::class)->name('admin.user.delete');
     });
 });
-
+});
 
