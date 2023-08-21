@@ -16,14 +16,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Auth::routes();
+Auth::routes(['verify' => true]);
 Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
 Route::name('main.')->group(function() {
     Route::get('/', \App\Http\Controllers\Main\IndexController::class);
 });
 
-Route::group(['middleware' => ['auth', 'admin']], function (){
+Route::group(['middleware' => ['auth', 'admin', 'verified']], function (){
 
 Route::prefix('admin')->group(function (){
     Route::name('main')->group(function() {

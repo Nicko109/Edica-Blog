@@ -38,6 +38,8 @@ class StoreRequest extends FormRequest
             'email.string' => 'Почта должна быть строкой',
             'email.email' => 'Ваша почта должна соответствовать формату mail@some.domain',
             'email.unique' => 'Пользователь с таким email уже существует',
+            'password.required' => 'Это поле необходимо для заполнения',
+            'password.string' => 'Пароль должен быть строкой',
         ];
     }
 }
