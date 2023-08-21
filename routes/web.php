@@ -26,9 +26,7 @@ Route::name('main.')->group(function() {
 Route::group(['middleware' => ['auth', 'admin', 'verified']], function (){
 
 Route::prefix('admin')->group(function (){
-    Route::name('main')->group(function() {
-        Route::get('/', \App\Http\Controllers\Admin\Main\IndexController::class)->name('main.index');
-});
+        Route::get('/', \App\Http\Controllers\Admin\Main\IndexController::class)->name('admin.main.index');
     Route::prefix('post')->group(function (){
         Route::get('/', \App\Http\Controllers\Admin\Post\IndexController::class)->name('admin.post.index');
         Route::get('/create', \App\Http\Controllers\Admin\Post\CreateController::class)->name('admin.post.create');
