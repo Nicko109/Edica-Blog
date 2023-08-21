@@ -3064,7 +3064,7 @@
         return res;
     }
 
-    // TODO: Use [].sort instead?
+    // TODO: User [].sort instead?
     function min() {
         var args = [].slice.call(arguments, 0);
 
@@ -3259,7 +3259,7 @@
                 (isMoment(input) || isDate(input)
                     ? input.valueOf()
                     : createLocal(input).valueOf()) - res.valueOf();
-            // Use low-level api, because this fn is low-level api.
+            // User low-level api, because this fn is low-level api.
             res._d.setTime(res._d.valueOf() + diff);
             hooks.updateOffset(res, false);
             return res;
@@ -4022,7 +4022,7 @@
     }
 
     var lang = deprecate(
-        'moment().lang() is deprecated. Instead, use moment().localeData() to get the language configuration. Use moment().locale() to change languages.',
+        'moment().lang() is deprecated. Instead, use moment().localeData() to get the language configuration. User moment().locale() to change languages.',
         function (key) {
             if (key === undefined) {
                 return this.localeData();
@@ -4953,15 +4953,15 @@
     proto.zoneAbbr = getZoneAbbr;
     proto.zoneName = getZoneName;
     proto.dates = deprecate(
-        'dates accessor is deprecated. Use date instead.',
+        'dates accessor is deprecated. User date instead.',
         getSetDayOfMonth
     );
     proto.months = deprecate(
-        'months accessor is deprecated. Use month instead',
+        'months accessor is deprecated. User month instead',
         getSetMonth
     );
     proto.years = deprecate(
-        'years accessor is deprecated. Use year instead',
+        'years accessor is deprecated. User year instead',
         getSetYear
     );
     proto.zone = deprecate(
@@ -5153,11 +5153,11 @@
     // Side effect imports
 
     hooks.lang = deprecate(
-        'moment.lang is deprecated. Use moment.locale instead.',
+        'moment.lang is deprecated. User moment.locale instead.',
         getSetGlobalLocale
     );
     hooks.langData = deprecate(
-        'moment.langData is deprecated. Use moment.localeData instead.',
+        'moment.langData is deprecated. User moment.localeData instead.',
         getLocale
     );
 
@@ -5318,7 +5318,7 @@
         }
     }
 
-    // TODO: Use this.as('ms')?
+    // TODO: User this.as('ms')?
     function valueOf$1() {
         if (!this.isValid()) {
             return NaN;

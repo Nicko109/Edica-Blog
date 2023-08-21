@@ -5,7 +5,7 @@
 
 ( function( factory ) {
 	"use strict";
-	
+
 	if ( typeof define === "function" && define.amd ) {
 
 		// AMD. Register as an anonymous module.
@@ -7335,7 +7335,7 @@ function datepicker_getZindex( elem ) {
 }
 
 /* Date picker manager.
-   Use the singleton instance of this class, $.datepicker, to interact with the date picker.
+   User the singleton instance of this class, $.datepicker, to interact with the date picker.
    Settings for (groups of) date pickers are maintained in an instance object,
    allowing multiple different settings on the same page. */
 
@@ -9730,7 +9730,7 @@ var widgetsMouse = $.widget( "ui.mouse", {
 
 
 
-// $.ui.plugin is deprecated. Use $.widget() extensions instead.
+// $.ui.plugin is deprecated. User $.widget() extensions instead.
 var plugin = $.ui.plugin = {
 	add: function( module, option, set ) {
 		var i,
@@ -10562,7 +10562,7 @@ $.ui.plugin.add( "draggable", "connectToSortable", {
 				draggable.cancelHelperRemoval = true;
 				sortable.cancelHelperRemoval = false;
 
-				// Use _storedCSS To restore properties in the sortable,
+				// User _storedCSS To restore properties in the sortable,
 				// as this also handles revert (#9675) since the draggable
 				// may have modified them in unexpected ways (#8809)
 				sortable._storedCSS = {
@@ -12607,7 +12607,7 @@ $.widget( "ui.dialog", {
 		} );
 
 		// Support: IE
-		// Use type="button" to prevent enter keypresses in textboxes from closing the
+		// User type="button" to prevent enter keypresses in textboxes from closing the
 		// dialog in IE (#9312)
 		this.uiDialogTitlebarClose = $( "<button type='button'></button>" )
 			.button( {

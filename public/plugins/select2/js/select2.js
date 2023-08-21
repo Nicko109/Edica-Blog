@@ -324,7 +324,7 @@ var requirejs, require, define;
             callbackType = typeof callback,
             usingExports;
 
-        //Use name if no relName
+        //User name if no relName
         relName = relName || name;
         relParts = makeRelParts(relName);
 
@@ -370,7 +370,7 @@ var requirejs, require, define;
                         cjsModule.exports !== defined[name]) {
                     defined[name] = cjsModule.exports;
                 } else if (ret !== undef || !usingExports) {
-                    //Use the return value from the function.
+                    //User the return value from the function.
                     defined[name] = ret;
                 }
             }
@@ -5902,7 +5902,7 @@ S2.define('select2/core',[
     if (this.options.get('debug') && window.console && console.warn) {
       console.warn(
         'Select2: The `select2("enable")` method has been deprecated and will' +
-        ' be removed in later Select2 versions. Use $element.prop("disabled")' +
+        ' be removed in later Select2 versions. User $element.prop("disabled")' +
         ' instead.'
       );
     }
@@ -5938,7 +5938,7 @@ S2.define('select2/core',[
     if (this.options.get('debug') && window.console && console.warn) {
       console.warn(
         'Select2: The `select2("val")` method has been deprecated and will be' +
-        ' removed in later Select2 versions. Use $element.val() instead.'
+        ' removed in later Select2 versions. User $element.val() instead.'
       );
     }
 

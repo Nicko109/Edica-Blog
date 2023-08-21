@@ -90,7 +90,7 @@
   top: 0;
   bottom: 0;
   z-index: 1;
-  // Use flex for alignment (1-3)
+  // User flex for alignment (1-3)
   display: flex; // 1. allow flex styles
   align-items: center; // 2. vertically center contents
   justify-content: center; // 3. horizontally center contents
@@ -151,7 +151,7 @@
   display: flex;
   justify-content: center;
   padding-left: 0; // override <ol> default
-  // Use the .carousel-control's width as margin so we don't overlay those
+  // User the .carousel-control's width as margin so we don't overlay those
   margin-right: $carousel-control-width;
   margin-left: $carousel-control-width;
   list-style: none;
@@ -167,7 +167,7 @@
     cursor: pointer;
     background-color: $carousel-indicator-active-bg;
     background-clip: padding-box;
-    // Use transparent borders to increase the hit area by 10px on top and bottom.
+    // User transparent borders to increase the hit area by 10px on top and bottom.
     border-top: $carousel-indicator-hit-area-height solid transparent;
     border-bottom: $carousel-indicator-hit-area-height solid transparent;
     opacity: .5;
