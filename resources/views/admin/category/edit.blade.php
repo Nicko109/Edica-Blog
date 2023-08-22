@@ -26,6 +26,7 @@
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
+                <div class="col-12">
                 <form class="w-25" action="{{ route('admin.category.update', $category->id) }}" method="POST">
                     @csrf
                     @method('PATCH')
@@ -38,7 +39,9 @@
                     </div>
                     <input type="submit" class="btn btn-primary" value="Обновить">
                 </form>
+                </div>
             </div>
+
             <!-- /.row -->
 
         </div><!-- /.container-fluid -->
