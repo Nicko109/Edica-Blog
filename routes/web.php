@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 Auth::routes(['verify' => true]);
 Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
-Route::name('main.')->group(function () {
-    Route::get('/', \App\Http\Controllers\Main\IndexController::class);
-});
+
+    Route::get('/', \App\Http\Controllers\Main\IndexController::class)->name('main.index');
+
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::prefix('personal')->group(function () {
         Route::get('/', \App\Http\Controllers\Personal\Main\IndexController::class)->name('personal.main.index');
