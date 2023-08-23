@@ -17,7 +17,12 @@ Auth::routes(['verify' => true]);
 Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
 
-    Route::get('/', \App\Http\Controllers\Main\IndexController::class)->name('main.index');
+Route::get('/', \App\Http\Controllers\Main\IndexController::class)->name('main.index');
+
+Route::prefix('posts')->group(function () {
+Route::get('/', \App\Http\Controllers\Post\IndexController::class)->name('post.index');
+Route::get('/{post}', \App\Http\Controllers\Post\ShowController::class)->name('post.show');
+});
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::prefix('personal')->group(function () {
