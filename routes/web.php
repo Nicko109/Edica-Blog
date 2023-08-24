@@ -18,14 +18,24 @@ Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logou
 
 
 Route::get('/', \App\Http\Controllers\Main\IndexController::class)->name('main.index');
+Route::prefix('categories')->group(function () {
+Route::get('/', \App\Http\Controllers\Category\IndexController::class)->name('category.index');
+    Route::prefix('{category}/posts')->group(function () {
+        Route::get('/', \App\Http\Controllers\Category\Post\IndexController::class)->name('category.post.index');
+    });
+});
 
 Route::prefix('posts')->group(function () {
 Route::get('/', \App\Http\Controllers\Post\IndexController::class)->name('post.index');
 Route::get('/{post}', \App\Http\Controllers\Post\ShowController::class)->name('post.show');
 
     Route::prefix('{post}/comments')->group(function () {
-        Route::post('/', \App\Http\Controllers\Post\Comment\StoreController::class)->name('post.comment.store');
+        Route::post('/', \App\Http\Controllers\Post\Like\StoreController::class)->name('post.like.store');
 });
+
+    Route::prefix('{post}/likes')->group(function () {
+        Route::post('/', \App\Http\Controllers\Post\Comment\StoreController::class)->name('post.comment.store');
+    });
 });
 
 
